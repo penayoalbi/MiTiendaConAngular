@@ -12,7 +12,7 @@
       <form>
         <input type="text" id="login" class="fadeIn second" name="usuario" [(ngModel)]="usuario.usuario" placeholder="usuario">
         <input type="password" id="password" class="fadeIn third" name="clave" [(ngModel)]="usuario.clave" placeholder="clave">
-        <input type="submit" class="fadeIn fourth" value="Log In">
+        <input type="submit" class="fadeIn fourth" (click)="logeo()" value="Log In">
       </form>
   
       <!-- Remind Passowrd -->

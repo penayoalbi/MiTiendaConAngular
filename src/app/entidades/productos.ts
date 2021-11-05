@@ -3,4 +3,5 @@ export class Productos {
     codigo!: number;
     descripcion!:string;
     stock!:number;
+    constructor(){}
 }
