@@ -25,4 +25,8 @@ export class ApiService {
   sesion(user: Usuario): Observable<Usuario[]>{
     return <Observable<Usuario[]>>(this.http.post(this.api+'/usuario/login',JSON.stringify(user)));
   }
+
+  crearUsuario(usuario: Usuario): Observable<Usuario[]>{
+    return <Observable<Usuario[]>>(this.http.post(this.api+'/usuario/new',JSON.stringify(usuario)));
+  }
 }

@@ -1,1 +1,33 @@
 <p>nuevo works!</p>
+<div class="container fluid">
+    <div class="body">
+      <div class="login-form">
+        <form class="form-group">
+          <h3>Registrase</h3>
+           <mat-form-field class="full-width" appearance="fill">
+             <mat-label>Nombre</mat-label>
+             <input type="text" name="nombre"  matInput [(ngModel)]="usuario.nombre" placeholder="Usuario">
+           </mat-form-field>
+           <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Apellido</mat-label>
+            <input type="text" name="apellido"   matInput [(ngModel)]="usuario.apellido" placeholder="Apellido">
+            </mat-form-field>
+            <mat-form-field class="full-width" appearance="fill">
+              <mat-label>Correo</mat-label>
+              <input type="email" name="correo" matInput [(ngModel)]="usuario.correo" placeholder="Correo">
+            </mat-form-field>
+            <mat-form-field class="full-width" appearance="fill">
+              <mat-label>Usuario</mat-label>
+              <input type="text" name="usuario" matName="usuario"  matInput [(ngModel)]="usuario.usuario" placeholder="Usuario">
+            </mat-form-field>
+            <mat-form-field class="full-width" appearance="fill">
+              <mat-label>Clave</mat-label>
+              <input type="password" name="clave" matInput [(ngModel)]="usuario.clave" placeholder="Clave">
+            </mat-form-field>
+            <button  type="submit" mat-button (click)="registrarUsuario()"  class="btn btn-primary" >Registrarse</button>
+            <button  mat-button  color="Primary" class="btn btn-danger">Cancelar</button>
+            <p>¿Ya estas registrado?  <a href="login"> Inicia Sesión!</a> </p> 
+         </form>
+      </div > 
+    </div>
+</div>
