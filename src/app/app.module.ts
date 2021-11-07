@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
-import {HttpClient, HttpClientModule} from '@angular/common/http'
+import { HttpClient, HttpClientModule} from '@angular/common/http'
 
 import { AppRoutingModule} from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +13,12 @@ import { EditarComponent } from './Componentes/editar/editar.component';
 import { NoEncontradoComponent } from './Componentes/no-encontrado/no-encontrado.component';
 import { ProductosComponent } from './Componentes/productos/productos/productos.component';
 import { NuevoProductoComponent } from './Componentes/productos/nuevo-producto/nuevo-producto.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material.module';
+import { UserServiceService } from './servicios/api/user-service.service';
+import { ProductoServiceService } from './servicios/api/producto-service.service';
+
+
 
 @NgModule({
   declarations: [
@@ -30,10 +36,14 @@ import { NuevoProductoComponent } from './Componentes/productos/nuevo-producto/n
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
-    
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MaterialModule
+   
   ],
-  providers: [HttpClient],
+  providers: [HttpClient, 
+    UserServiceService,
+    ProductoServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
