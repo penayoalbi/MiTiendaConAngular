@@ -9,10 +9,16 @@
       </div>
   
       <!-- Login Form -->
-      <form>
+     <!--<form [formGroup]="formLogin" (ngSubmit)="logeo()"> --> 
+      <form class="form-group" >
         <input type="text" id="login" class="fadeIn second" name="usuario" [(ngModel)]="usuario.usuario" placeholder="usuario">
         <input type="password" id="password" class="fadeIn third" name="clave" [(ngModel)]="usuario.clave" placeholder="clave">
-        <input type="submit" class="fadeIn fourth" (click)="logeo()" value="Log In">
+        <input type="button"  (click)="logeo()"class="fadeIn fourth" value="Log In">
+       
+        <!-- <input type="text" id="login" class="fadeIn second" formControlName="usuario"  placeholder="usuario" required>
+        <input type="password" id="password" class="fadeIn third"  formControlName="clave" placeholder="clave">
+        <input type="submit" class="fadeIn fourth"  [disabled]="formLogin.invalid" value="Log In">
+      -->
       </form>
   
       <!-- Remind Passowrd -->
@@ -24,4 +30,4 @@
       </div>
   
     </div>
-  </div>
+</div>
