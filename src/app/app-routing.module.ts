@@ -5,7 +5,8 @@ import { LoginComponent } from './Componentes/login/login.component';
 import { NoEncontradoComponent } from './Componentes/no-encontrado/no-encontrado.component';
 import { NuevoComponent } from './Componentes/nuevo/nuevo.component';
 import { PrincipalComponent } from './Componentes/principal/principal.component';
-
+import { NuevoProductoComponent } from './Componentes/productos/nuevo-producto/nuevo-producto.component';
+import { ProductosComponent } from './Componentes/productos/productos/productos.component';
 
 const routes: Routes = [
  {path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -13,8 +14,9 @@ const routes: Routes = [
  {path: 'principal',component: PrincipalComponent},
  {path: 'nuevo', component: NuevoComponent},
  {path: 'editar', component: EditarComponent},
- {path: '**', component: NoEncontradoComponent}
-
+ {path: 'producto', component: ProductosComponent},
+ {path: '**', component: NoEncontradoComponent},
+ 
 ];
 
 @NgModule({
@@ -23,4 +25,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const  routingComponents =  [LoginComponent,PrincipalComponent, EditarComponent, NuevoComponent ]
+//export const  routingComponents =  [LoginComponent,PrincipalComponent, EditarComponent, NuevoComponent ]
