@@ -1,77 +1,43 @@
+<app-navegacion></app-navegacion>
 
-<nav class=" navbar navbar-light" style="background-color: #140514">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" value="Buscar" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <a class="navbar-brand" href="#">Navbar</a>
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Usuarios</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Productos </a>
-
-
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="button">Buscar</button>
-    </form>
+<div class="container p-4">
+  <div class="row">
+    <div class="col-md-7">
+      Lista
+      <app-productos></app-productos>
+    </div>
+    <div class="col-md-5">
+      Formulario prod
+      <app-nuevo-producto></app-nuevo-producto>
+    </div>
   </div>
-</nav>
-<!--
-<div>
-  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-    <mat-icon>more_vert</mat-icon>
-  </button>
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item>
-      <mat-icon>dialpad</mat-icon>
-      <span>Redial</span>
-    </button>
-    <button mat-menu-item disabled>
-      <mat-icon>voicemail</mat-icon>
-      <span>Check voice mail</span>
-    </button>
-    <button mat-menu-item>
-      <mat-icon>notifications_off</mat-icon>
-      <span>Disable alerts</span>
-    </button>
-  </mat-menu>
 </div>
--->
-<div class="container fluid">
-  <div class="body">
-    
-    <form action="" class="login-form">
-      <h2>registro de productos</h2>
-       <mat-form-field class="full-width" appearance="fill">
-         <mat-label>nombre</mat-label>
-         <input type="text"  matInput placeholder="Usuario">
-       </mat-form-field>
-       <mat-form-field class="full-width" appearance="fill">
-        <mat-label>apellido</mat-label>
-        <input type="text"  matInput placeholder="Apellido">
-        </mat-form-field>
-        <mat-form-field class="full-width" appearance="fill">
-          <mat-label>correo</mat-label>
-          <input type="email"  matInput placeholder="Correo">
-        </mat-form-field>
-        <mat-form-field class="full-width" appearance="fill">
-          <mat-label>usuario</mat-label>
-          <input type="text"  matInput placeholder="Usuario">
-        </mat-form-field>
-        <mat-form-field class="full-width" appearance="fill">
-          <mat-label>clave</mat-label>
-          <input type="password"  matInput placeholder="Clave">
-        </mat-form-field>
-        <button mat-button color="Primary">Registrar</button>
-     </form>
-  </div > 
 
+<footer class="footer "> 
+<div class="container">
+  <div class= "card card-body">
+    <div class="page-header">
+    </div>
+    <div class="row grid-divider">
+    <div class="col-sm-4">
+      <div class="col-padding">
+        <h3>Column 1</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima expedita incidunt rerum.</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="col-padding">
+        <h3>Column 2</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate placeat suscipit maxime tenetur officiis asperiores quae molestias fugiat praesentium dolorum.</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="col-padding">
+        <h3>Column 3</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab veniam aperiam numquam cupiditate maiores repudiandae ea dicta, sunt rerum corporis. Ab veniam aperiam numquam cupiditate maiores repudiandae ea dicta, sunt rerum corporis. Ab veniam aperiam numquam cupiditate maiores repudiandae ea dicta.</p>
+      </div>
+    </div>
+    </div>
+  </div>
 </div>
+</footer>

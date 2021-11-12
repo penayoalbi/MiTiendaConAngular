@@ -18,36 +18,26 @@ export class LoginComponent implements OnInit {
   constructor(private ruteo: Router,
      private api:ApiService,
      private userService: UserServiceService,
-     private builder: FormBuilder) { 
+     private builder: FormBuilder){ 
      this.usuario = new Usuario;
+     if(sessionStorage.getItem('usuario')!=null){
+       this.ruteo.navigate(['/principal']);
+
+     }
     // this.formLogin = this.builder.group({
     //  usuario: new FormControl('',Validators.required),
     //  clave: new FormControl('',Validators.required)}
    // );
-
   }
 
   ngOnInit(): void {
   }
 
-/*
-  logeo(){
-    console.log(this.formLogin);
-    this.usuario.usuario = this.formLogin.value.usuario;
-    this.usuario.clave = this.formLogin.value.clave;
-    
-    this.api.sesion(this.usuario).subscribe(datos=>{
-      console.log(datos);
-      alert("ok");
-    },err=>{
-      alert("error")
-    })
-  }*/
-
   ingreso(resp: Usuario[]){
     if(resp.length==0){
       alert("Error: usuario no valido");
     }else{
+      sessionStorage.setItem('usuario',resp[0].usuario);
       this.userService.setUsuario(resp[0]);
       this.ruteo.navigateByUrl('principal');
     }
@@ -56,10 +46,8 @@ export class LoginComponent implements OnInit {
    logeo(){
    console.log(this.usuario.usuario);
    console.log(this.usuario.clave);
-
     this.api.login(this.usuario).subscribe(datos=>{
      this.ingreso(datos);
-     // this.ingreso(datos));
     },err=>alert(err.Message));
   }
 

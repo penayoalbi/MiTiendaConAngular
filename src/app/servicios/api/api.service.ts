@@ -5,12 +5,14 @@ import { Observable } from 'rxjs';
 import { Usuario } from 'src/app/entidades/usuario';
 import { UserServiceService } from './user-service.service';
 import { map} from 'rxjs/operators';
+import { Productos } from 'src/app/entidades/productos';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
   usuario!: Usuario;
+  producto!: Productos;
   api: string;
 
   constructor(private http: HttpClient, private map: UserServiceService){
@@ -29,4 +31,13 @@ export class ApiService {
   crearUsuario(usuario: Usuario): Observable<Usuario[]>{
     return <Observable<Usuario[]>>(this.http.post(this.api+'/usuario/new',JSON.stringify(usuario)));
   }
+
+  nuevoProducto(producto: Productos): Observable<Productos[]>{
+    return <Observable<Productos[]>>(this.http.post(this.api+'/producto', JSON.stringify(producto)));
+  }
+
+  traerProductos(){
+
+  }
+
 }

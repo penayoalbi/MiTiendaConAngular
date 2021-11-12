@@ -17,6 +17,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { UserServiceService } from './servicios/api/user-service.service';
 import { ProductoServiceService } from './servicios/api/producto-service.service';
+import { NavegacionComponent } from './Componentes/navegacion/navegacion.component';
+import { PipePipe } from './pipes/pipe.pipe';
 
 
 
@@ -29,7 +31,9 @@ import { ProductoServiceService } from './servicios/api/producto-service.service
     EditarComponent,
     NoEncontradoComponent,
     ProductosComponent,
-    NuevoProductoComponent
+    NuevoProductoComponent,
+    NavegacionComponent,
+    PipePipe
   ],
   imports: [
     BrowserModule,

@@ -7,12 +7,13 @@ import { NuevoComponent } from './Componentes/nuevo/nuevo.component';
 import { PrincipalComponent } from './Componentes/principal/principal.component';
 import { NuevoProductoComponent } from './Componentes/productos/nuevo-producto/nuevo-producto.component';
 import { ProductosComponent } from './Componentes/productos/productos/productos.component';
+import { GuardGuard } from './guards/guard.guard';
 
 const routes: Routes = [
  {path: '', redirectTo: 'login', pathMatch: 'full'},
  {path: 'login', component: LoginComponent},
  {path: 'principal',component: PrincipalComponent},
- {path: 'nuevo', component: NuevoComponent},
+ {path: 'nuevo', component: NuevoComponent,canActivate:[GuardGuard]},
  {path: 'editar', component: EditarComponent},
  {path: 'producto', component: ProductosComponent},
  {path: '**', component: NoEncontradoComponent},

@@ -18,9 +18,6 @@ export class NuevoComponent implements OnInit {
   }
 
   registrarUsuario(){
-   // console.log(this.usuario.nombre);
-   // console.log(this.usuario.usuario);
-   // console.log(this.usuario.clave);
    console.log("click en registrarse");
 
     this.api.crearUsuario(this.usuario).subscribe(
@@ -31,12 +28,5 @@ export class NuevoComponent implements OnInit {
     });
   }
 
-  /*
- 
-  registrarUser(){
-    this.apiService.crearUsuario(this.usuario).subscribe();
-  }
-}
-  */
 
 }
