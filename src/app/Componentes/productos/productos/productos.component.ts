@@ -30,6 +30,9 @@ export class ProductosComponent implements OnInit {
     }
     eliminar(id:number){
       console.log(id);
+      this.api.borrarProducto(id).subscribe(
+        resp=> {console.log('se elimino correctamente')},
+        err => {console.log('error al eliminar')}
+      );
     }
-
 }

@@ -40,4 +40,8 @@ export class ApiService {
     return this.http.get(this.api+'/producto');
   }
 
+  borrarProducto(id: number){
+    return this.http.delete(this.api+'/producto/borrar/'+id);
+  }
+
 }
