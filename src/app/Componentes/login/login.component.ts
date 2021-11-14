@@ -18,12 +18,13 @@ export class LoginComponent implements OnInit {
   constructor(private ruteo: Router,
      private api:ApiService,
      private userService: UserServiceService,
-     private builder: FormBuilder){ 
+     private builder: FormBuilder)
+     { 
      this.usuario = new Usuario;
      if(sessionStorage.getItem('usuario')!=null){
        this.ruteo.navigate(['/principal']);
-
      }
+     
     // this.formLogin = this.builder.group({
     //  usuario: new FormControl('',Validators.required),
     //  clave: new FormControl('',Validators.required)}
@@ -42,7 +43,6 @@ export class LoginComponent implements OnInit {
       this.ruteo.navigateByUrl('principal');
     }
   }
-  
    logeo(){
    console.log(this.usuario.usuario);
    console.log(this.usuario.clave);
@@ -53,6 +53,11 @@ export class LoginComponent implements OnInit {
 
   altaUser(){
     this.ruteo.navigateByUrl('principal');
+  }
+
+  cerrarSesion(){
+    sessionStorage.removeItem('usuario');
+    this.ruteo.navigateByUrl('login');
   }
 
 }

@@ -5,5 +5,6 @@ export class Productos {
     categoria!: string;
     precio!: number;
     stock!:number;
+    imagen!: string; 
     constructor(){}
 }

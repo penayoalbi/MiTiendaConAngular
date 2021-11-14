@@ -1,5 +1,32 @@
 <p>productos works!</p>
-<div class="container fluid">
+<div class="col-md-5" *ngFor='let lista of prod'>
+  <div class="card text-center"  >
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="icon-verano"></div>
+          <mat-card-title>{{lista.nombre}}</mat-card-title>
+          <mat-card-subtitle>{{lista.nombre}}</mat-card-subtitle>
+        </mat-card-header> 
+          <mat-card-content>
+            <!--<img src="./../../../../assets/brunamulti.jpg" class="card-img-top">-->
+            <img [src]="lista.imagen" class="card-img-top">
+           <!--<p >{{lista.idproducto}}</p>--> 
+            <p [appResaltar]='color'> {{lista.descripcion}}</p>
+            <p>{{lista.precio}}</p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button  class="btn btn-success" >Editar</button>
+            <button mat-button class="btn btn-danger"(click)="eliminar(lista.idproducto)">Eliminar</button>
+          </mat-card-actions>
+      </mat-card> 
+  <!--  <img [src]="" class="card-img-top">
+    <div class="card-body">
+      <p>{{lista.descripcion}}</p>
+      <p>{{lista.precio}}</p>-->
+   
+  </div>
+</div>
+<!--<div class="container fluid">
   <div class="row">
     <div class="col-md-6">
       <div class="card ">
@@ -54,6 +81,6 @@
   </div> 
 </div>
 
-   
+-->
 
 

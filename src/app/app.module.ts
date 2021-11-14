@@ -19,6 +19,8 @@ import { UserServiceService } from './servicios/api/user-service.service';
 import { ProductoServiceService } from './servicios/api/producto-service.service';
 import { NavegacionComponent } from './Componentes/navegacion/navegacion.component';
 import { PipePipe } from './pipes/pipe.pipe';
+import { FooterComponent } from './Componentes/footer/footer.component';
+import { ResaltarDirective } from './directivas/resaltar.directive';
 
 
 
@@ -33,7 +35,9 @@ import { PipePipe } from './pipes/pipe.pipe';
     ProductosComponent,
     NuevoProductoComponent,
     NavegacionComponent,
-    PipePipe
+    PipePipe,
+    FooterComponent,
+    ResaltarDirective
   ],
   imports: [
     BrowserModule,
@@ -43,7 +47,6 @@ import { PipePipe } from './pipes/pipe.pipe';
     HttpClientModule,
     BrowserAnimationsModule,
     MaterialModule
-   
   ],
   providers: [HttpClient, 
     UserServiceService,

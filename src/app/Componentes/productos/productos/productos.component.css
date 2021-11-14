@@ -13,3 +13,7 @@
     background-image: url('/assets/iconverano.jpg');
     background-size: cover;
   }
+  .icon-trash{
+    background-image: url('/assets/trash.jpg');
+    background-size: cover;
+  }

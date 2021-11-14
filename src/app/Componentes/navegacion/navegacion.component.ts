@@ -6,10 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navegacion.component.css']
 })
 export class NavegacionComponent implements OnInit {
+  sesion: boolean;
 
-  constructor() { }
+  constructor() {
+    this.sesion= false;
+   }
 
   ngOnInit(): void {
+  }
+
+  cerrarSesion(){
+    sessionStorage.removeItem('usuario');
+    this.sesion=true;
   }
 
 }

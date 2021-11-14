@@ -7,19 +7,16 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="principal">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" routerLink="/principal">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="productos">Productos</a>
+                    <a class="nav-link" routerLink="/productos">Productos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="**">Lista</a>
+                    <a class="nav-link disabled" routerLink="/nuevo">Editar</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="**">Editar</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="**">Cerrar sesión</a>
+                <li class="nav-item">  
+                    <a class="nav-link " (click)='cerrarSesion()' routerLink="/login">Cerrar sesión</a>
                 </li>
 
             </ul>

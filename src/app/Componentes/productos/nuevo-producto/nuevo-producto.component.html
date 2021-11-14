@@ -10,20 +10,19 @@
                 </div>
                 <div class="form-group">
                     <input type="text" name="descripcion"class="form-control" [(ngModel)]="producto.descripcion"  placeholder="Descripcion"> 
-                </div><br>
+                </div>
                 <div class="form-group">
                     <input type="text" name="categoria"class="form-control" [(ngModel)]="producto.categoria"  placeholder="Categoria"> 
-                </div><br>
+                </div>
                 <div class="form-group">
                     <input type="text" name="precio"class="form-control" [(ngModel)]="producto.precio"  placeholder="Precio"> 
-                </div><br>
+                </div>
                 <div class="form-group">
                     <input type="text" name="stock"class="form-control" [(ngModel)]="producto.stock"  placeholder="Stock"> 
-                </div><br>
+                </div>
                 <div class="form-group">
-                    <label for="exampleFormControlFile1">imagen</label>
-                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
-                  </div>
+                    <input type="url" class="form-control" name="imagen" [(ngModel)]="producto.imagen" placeholder="imagen" >
+                </div>
                     <input type="hidden" id="idnom">
                 <button type="button" id="add" class=" btn btn-success btn-block text-center" (click)="crearProducto()" >Agregar</button>
                 <button type="button" id="add" class=" btn btn-danger btn-block text-center"> Cancelar</button>
