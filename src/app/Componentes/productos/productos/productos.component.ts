@@ -13,6 +13,7 @@ export class ProductosComponent implements OnInit {
   nuevo:boolean;
   prod: any = [];
   color = '';
+  filtrarPorNombre = '';
 
   constructor(private api:ApiService) {
     this.nuevo=false;

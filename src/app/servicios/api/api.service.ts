@@ -43,5 +43,8 @@ export class ApiService {
   borrarProducto(id: number){
     return this.http.delete(this.api+'/producto/borrar/'+id);
   }
+  buscarPorNombre(name: string|any){
+    return this.http.get(this.api+'/producto/buscar/'+name);
+  }
 
 }
