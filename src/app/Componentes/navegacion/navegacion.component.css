@@ -1,13 +1,13 @@
 .navbar{
-    font-size: larger;
+    text-align: right;
+    font-size: medium;
     color: aliceblue;
 }
 .navbar img{
-   /* background-image: url('/assets/iconverano.jpg');*/
    width:70px;
    height:70px;
    border-radius:150px;
-   border:5px solid rgb(244, 69, 250);
+   border:2px solid rgb(244, 69, 250);
 }
 
 .navbar form{

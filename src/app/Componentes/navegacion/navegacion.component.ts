@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Productos } from 'src/app/entidades/productos';
+import { ApiService } from 'src/app/servicios/api/api.service';
 
 @Component({
   selector: 'app-navegacion',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navegacion.component.css']
 })
 export class NavegacionComponent implements OnInit {
-  sesion: boolean;
 
-  constructor() {
-    this.sesion= false;
+  mostrar?: boolean;
+  producto!: Productos;
+  nombre = "";
+  constructor(private api: ApiService) {
+
    }
 
   ngOnInit(): void {
@@ -17,7 +21,14 @@ export class NavegacionComponent implements OnInit {
 
   cerrarSesion(){
     sessionStorage.removeItem('usuario');
-    this.sesion=true;
+    this.mostrar=true;
+  //  this.cerrar= true;
+  }
+
+  mostrarlink():any{
+    if(sessionStorage.getItem('usuario')=== null){
+      return this.mostrar = true;
+    }
   }
 
 }
