@@ -2,6 +2,7 @@ import { Component, Input, OnInit, Output } from '@angular/core';
 import { Productos } from 'src/app/entidades/productos';
 import { ApiService } from 'src/app/servicios/api/api.service';
 import { ProductoServiceService } from 'src/app/servicios/api/producto-service.service';
+import { ResaltarDirective } from 'src/app/directivas/resaltar.directive';
 
 
 @Component({
@@ -12,10 +13,9 @@ import { ProductoServiceService } from 'src/app/servicios/api/producto-service.s
 export class ProductosComponent implements OnInit {
 
  @Output()data: any; 
- // talles: number[]=[35,36,37];
   nuevo:boolean;
   prod: any = [];
-  color = '';
+  color!:'';
   filtrarPorNombre = '';
 
   constructor(private api:ApiService, private serviProducto: ProductoServiceService ) {

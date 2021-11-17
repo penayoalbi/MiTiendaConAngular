@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
+import { Productos } from 'src/app/entidades/productos';
 import { ProductoServiceService } from 'src/app/servicios/api/producto-service.service';
 
 @Component({
@@ -7,15 +9,17 @@ import { ProductoServiceService } from 'src/app/servicios/api/producto-service.s
   styleUrls: ['./carrito.component.css']
 })
 export class CarritoComponent implements OnInit {
-  @Input()datosEntrante: any;
+  @Input()datosEntrante!: Productos;
 
   constructor( private serviProducto: ProductoServiceService) { }
 
-  public listaFavorito: Array<any>= [];
+  public listaFavorito: Array<Productos> = [];
 
   ngOnInit(): void {
     this.serviProducto.disparadorFavorito.subscribe(data =>{
-      this.listaFavorito.push(data)}) 
+      this.listaFavorito.push(data)}); 
+      //console.log(this.listaFavorito); 
   }
+   
 
 }

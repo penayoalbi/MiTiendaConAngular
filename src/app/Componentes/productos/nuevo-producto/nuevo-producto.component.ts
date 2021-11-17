@@ -19,10 +19,7 @@ export class NuevoProductoComponent implements OnInit {
   }
 
   crearProducto(){
-
-    console.log(this.producto.nombre);
-    console.log(this.producto.precio);
-    console.log(this.producto.descripcion);
+   // console.log(this.producto.nombre);
     this.api.nuevoProducto(this.producto).subscribe(
       valor => {
         console.log(valor);

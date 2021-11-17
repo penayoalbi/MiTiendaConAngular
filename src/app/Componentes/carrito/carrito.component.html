@@ -1,0 +1,25 @@
+<h2>Favorito</h2>
+    <hr>
+<div class="container  d-flex p-4 ">
+    <ng-container>
+        <mat-card>
+            <mat-card-header>
+                titulo
+            </mat-card-header>
+            <mat-card-content>
+                <ul class="card-body">
+                    <li *ngFor='let item of listaFavorito'>
+                        <div class="card-body">
+                            {{item.nombre}}
+                        </div>
+                        <img [src]="item.imagen">
+                    </li>
+                </ul>
+
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button class="btn btn-danger my-2 my-sm-0"  type="button">quitar</button>
+            </mat-card-actions>
+        </mat-card>
+    </ng-container>
+</div>
