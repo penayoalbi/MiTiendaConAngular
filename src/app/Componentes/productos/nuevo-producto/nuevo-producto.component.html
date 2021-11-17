@@ -1,31 +1,42 @@
-<p>nuevo-producto works!</p>
-
-<div class="col-md-12">
-    <div class="card">
-        <div class="card-body">
-            <!-- formulario de  agregar prod -->
-            <form id="form-agregar">
-                <div class="form-group">
-                    <input type="text" name="name" class="form-control" [(ngModel)]="producto.nombre" placeholder="Nombre">
-                </div>
-                <div class="form-group">
-                    <input type="text" name="descripcion"class="form-control" [(ngModel)]="producto.descripcion"  placeholder="Descripcion"> 
-                </div>
-                <div class="form-group">
-                    <input type="text" name="categoria"class="form-control" [(ngModel)]="producto.categoria"  placeholder="Categoria"> 
-                </div>
-                <div class="form-group">
-                    <input type="text" name="precio"class="form-control" [(ngModel)]="producto.precio"  placeholder="Precio"> 
-                </div>
-                <div class="form-group">
-                    <input type="text" name="stock"class="form-control" [(ngModel)]="producto.stock"  placeholder="Stock"> 
-                </div>
-                <div class="form-group">
-                    <input type="url" class="form-control" name="imagen" [(ngModel)]="producto.imagen" placeholder="imagen" >
-                </div>
-                    <input type="hidden" id="idnom">
-                <button type="button" id="add" class=" btn btn-success btn-block text-center" (click)="crearProducto()" >Agregar</button>
-                <button type="button" id="add" class=" btn btn-danger btn-block text-center"> Cancelar</button>
-            </form>   
+<h2 >Agregar producto</h2>
+<hr>
+<div class="container flex p-3  width: 80%;">
+    <div class="col-md-7 ">
+            <div class="card card-body">
+                <!-- formulario de  agregar prod -->
+                <form id="form-agregar">
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control" [(ngModel)]="producto.nombre" placeholder="Nombre">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="descripcion"class="form-control" [(ngModel)]="producto.descripcion"  placeholder="Descripcion"> 
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="categoria"class="form-control" [(ngModel)]="producto.categoria"  placeholder="Categoria"> 
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="precio"class="form-control" [(ngModel)]="producto.precio"  placeholder="Precio"> 
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="stock"class="form-control" [(ngModel)]="producto.stock"  placeholder="Stock"> 
+                    </div>
+                    <div class="form-group">
+                        <input type="url" class="form-control" name="imagen" [(ngModel)]="producto.imagen" placeholder="imagen" >
+                    </div>
+                        <input type="hidden" id="idnom">
+                    <button type="button" id="add" class=" btn btn-success btn-block text-center" (click)="crearProducto()" >Agregar</button>
+                    <button type="button" id="add" class=" btn btn-danger btn-block text-center"> Cancelar</button>
+                </form>   
+            </div>
+    </div>
+    <div class="col-md-5">
+        <div class="card card-body text-center">
+            <img [src]="producto.imagen =='' ? '/assets/no-image.png' : producto.imagen" class="card-img-top">
+            <p>{{producto.nombre}}</p>
+            <p>{{producto.descripcion}}</p>
+            <p>{{producto.categoria}}</p>
+            <p>{{producto.precio | currency}}</p>
+            <p>{{producto.stock}}</p>
+        </div>
     </div>
 </div>

@@ -7,19 +7,19 @@ export class ResaltarDirective {
 
   constructor(private element : ElementRef) { }
 
-  @Input()colorbase!: string;
+  @Input()colorbase?: string;
 
-  @Input('appResaltar')resaltarColor!: string;
+  @Input('appResaltar')resaltarColor?: string;
 
   @HostListener('mouseenter')OnMouseEnter(){
-    this.resaltar(this.resaltarColor || this.colorbase || 'red');
+    this.resaltar(this.resaltarColor || this.colorbase || 'yelow');
+    //this.resaltar('yelow')
   }
   @HostListener('mouseLeave')OnMouseLeave(){
-    this.resaltar(null);
+    this.resaltar('');
   }
 
-  private resaltar(color: string|any):void{
-    this.element.nativeElement.style.backgroundColor = color;
-
+  private resaltar(color: string ):void{
+    this.element.nativeElement.style.backgroundColor = color
   }
 }

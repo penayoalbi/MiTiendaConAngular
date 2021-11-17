@@ -21,6 +21,7 @@ import { NavegacionComponent } from './Componentes/navegacion/navegacion.compone
 import { PipePipe } from './pipes/pipe.pipe';
 import { FooterComponent } from './Componentes/footer/footer.component';
 import { ResaltarDirective } from './directivas/resaltar.directive';
+import { CarritoComponent } from './Componentes/carrito/carrito.component';
 
 
 
@@ -37,7 +38,8 @@ import { ResaltarDirective } from './directivas/resaltar.directive';
     NavegacionComponent,
     PipePipe,
     FooterComponent,
-    ResaltarDirective
+    ResaltarDirective,
+    CarritoComponent
   ],
   imports: [
     BrowserModule,

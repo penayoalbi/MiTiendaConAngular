@@ -1,30 +1,32 @@
-<div class="container"> 
+<h2>Lista de Productos</h2>
+<hr>
   <form class="d-flex" style="height: auto; width: 80%; font-size: 15px;">
-    <input class="form-control me-sm-7" type="search" name="filtrarPorNombre" [(ngModel)]='filtrarPorNombre'  placeholder="buscar..." aria-label="Buscar">
-    <button class="btn btn-success my-4 my-sm-0"  type="button">Buscar</button>
+    <input class="form-control me-sm-7" type="search" name="filtrarPorNombre" [(ngModel)]='filtrarPorNombre'  placeholder="Buscar por nombre" aria-label="Buscar">
+    <button class="btn btn-success my-4 my-sm-0 form-group"  type="button">Buscar</button>
   </form> 
   <div class="col-md-5" *ngFor='let lista of prod | pipe: filtrarPorNombre'>
     <div class="card text-center"  >
         <mat-card class="example-card">
           <mat-card-header>
-            <div mat-card-avatar class="icon-verano"></div>
+          <!--  <div mat-card-avatar class="icon-verano"></div>-->
             <mat-card-title>{{lista.nombre}}</mat-card-title>
-            <mat-card-subtitle>{{lista.nombre}}</mat-card-subtitle>
+           <!--<mat-card-subtitle>{{lista.nombre}}</mat-card-subtitle>--> 
           </mat-card-header> 
-            <mat-card-content>
+          <mat-card-content>
               <!--<img src="./../../../../assets/brunamulti.jpg" class="card-img-top">-->
-              <img [src]="lista.imagen" class="card-img-top">
-            <!--<p >{{lista.idproducto}}</p>--> 
-              <p [appResaltar]='color'> {{lista.descripcion}}</p>
-              <p>{{lista.precio}}</p>
-            </mat-card-content>
-            <mat-card-actions>
-              <button mat-button  class="btn btn-success" >Editar</button>
-              <button mat-button class="btn btn-danger"(click)="eliminar(lista.idproducto)">Eliminar</button>
-            </mat-card-actions>
+            <img [src]="lista.imagen" class="card-img-top">
+              <!--<p >{{lista.idproducto}}</p>--> 
+            <p appResaltar ='red'> {{lista.descripcion}}</p>
+            <p>{{lista.precio | currency}}</p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button  class="btn btn-success " >Editar</button>
+            <button mat-button class="btn btn-danger"(click)="eliminar(lista.idproducto)">Eliminar</button>
+            <button mat-button  class="btn" disabled (click)='agregarFavorito()' >favorito</button>
+          </mat-card-actions>
         </mat-card>   
     </div>
   </div>
-</div>
+
 
 

@@ -1,18 +1,18 @@
-<app-navegacion></app-navegacion>
-
 <div class="container p-4">
   <div class="row">
-    <div class="col-md-7">
-      Lista
-      <app-productos></app-productos>
+    <div class="col-md-7" >
+        <app-productos></app-productos>
+      
     </div>
-    <div class="col-md-5">
-      Formulario prod
-      <app-nuevo-producto></app-nuevo-producto>
+    <div class="col-md-5 card-body"  id='add'>
+      <app-nuevo-producto ></app-nuevo-producto>
     </div>
   </div>
 </div>
+<div>
+  <app-carrito></app-carrito>
+</div>
 
-<footer class="footer "> 
+<footer class="footer"> 
   <app-footer></app-footer>
 </footer>

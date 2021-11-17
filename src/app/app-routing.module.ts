@@ -1,5 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CarritoComponent } from './Componentes/carrito/carrito.component';
 import { EditarComponent } from './Componentes/editar/editar.component';
 import { LoginComponent } from './Componentes/login/login.component';
 import { NoEncontradoComponent } from './Componentes/no-encontrado/no-encontrado.component';
@@ -10,12 +11,14 @@ import { ProductosComponent } from './Componentes/productos/productos/productos.
 import { GuardGuard } from './guards/guard.guard';
 
 const routes: Routes = [
- {path: '', redirectTo: 'login', pathMatch: 'full'},
+ {path: '', redirectTo: 'principal', pathMatch: 'full'},
  {path: 'login', component: LoginComponent},
  {path: 'principal',component: PrincipalComponent},
- {path: 'nuevo', component: NuevoComponent,canActivate:[GuardGuard]},
- {path: 'editar', component: EditarComponent},
- {path: 'producto', component: ProductosComponent},
+ {path: 'nuevo', component: NuevoComponent},
+ {path: 'editar', component: EditarComponent,canActivate:[GuardGuard]},
+ {path: 'productos', component: ProductosComponent},
+ { path: 'addproducto', component: NuevoProductoComponent, canActivate:[GuardGuard]},
+ {path: 'carrito', component: CarritoComponent},
  {path: '**', component: NoEncontradoComponent},
  
 ];

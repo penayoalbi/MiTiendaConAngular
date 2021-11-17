@@ -1,9 +1,9 @@
-<p>nuevo works!</p>
-<div class="container fluid">
+
+<div class="container p-6  wrapper">
     <div class="body">
       <div class="login-form">
         <form class="form-group">
-          <h3>Registrase</h3>
+          <h2>Registrarse!</h2>
            <mat-form-field class="full-width" appearance="fill">
              <mat-label>Nombre</mat-label>
              <input type="text" name="nombre"  matInput [(ngModel)]="usuario.nombre" placeholder="Usuario">
@@ -24,9 +24,11 @@
               <mat-label>Clave</mat-label>
               <input type="password" name="clave" matInput [(ngModel)]="usuario.clave" placeholder="Clave">
             </mat-form-field>
-            <button  type="submit" mat-button (click)="registrarUsuario()"  class="btn btn-primary" >Registrarse</button>
-            <button  mat-button  color="Primary" class="btn btn-danger">Cancelar</button>
-            <p>¿Ya estas registrado?  <a href="login"> Inicia Sesión!</a> </p> 
+            <div  id="formFooter">
+              <button  type="submit" mat-button (click)="registrarUsuario()"  class="btn btn-success" >Registrarse</button>
+              <button  mat-button  color="Primary" class="btn btn-danger">Cancelar</button>
+              <p>¿Ya estas registrado?  <a href="login"> Inicia Sesión!</a> </p> 
+          </div>
          </form>
       </div > 
     </div>

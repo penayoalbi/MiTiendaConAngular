@@ -1,6 +1,7 @@
 .example-card {
     width: auto;
-    max-width: 300px;
+    max-width: 280px;
+    font-size: 10px;
 
   }
   
@@ -16,4 +17,9 @@
   .icon-trash{
     background-image: url('/assets/trash.jpg');
     background-size: cover;
+  }
+  button{
+    width: 60px;
+    height: 30px;
+    font-size: 9px;
   }

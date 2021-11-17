@@ -1,3 +1,4 @@
+export type roles = 'cliente' |'admin';
 export class Usuario {
     id!:number;
     nombre!:string ;
