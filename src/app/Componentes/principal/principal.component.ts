@@ -9,23 +9,14 @@ import { ApiService } from 'src/app/servicios/api/api.service';
   styleUrls: ['./principal.component.css']
 })
 export class PrincipalComponent implements OnInit {
-  esAdmin=true;
-
-  @Output() cardProducto = new EventEmitter();
-
-  constructor( private api: ApiService) { }
+ 
+  isAdmin;
+  constructor( private api: ApiService) { 
+    this.isAdmin = sessionStorage.getItem('usuario')==='admin';
+  }
 
   ngOnInit(): void {
-  }
-
-  onToggleCard(): void {
-    this.cardProducto.emit();
-  }
-
-  cardProd(){
-    if(sessionStorage.getItem('')){
-        this.esAdmin=false;
-    }
+    console.log(this.isAdmin);
   }
 
 }

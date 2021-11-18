@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Productos } from 'src/app/entidades/productos';
 import { ApiService } from 'src/app/servicios/api/api.service';
 
@@ -23,9 +24,9 @@ export class NuevoProductoComponent implements OnInit {
     this.api.nuevoProducto(this.producto).subscribe(
       valor => {
         console.log(valor);
-      }, err=>{
-        console.log("Error en crear prodcuto");
-      });
+      }, 
+      err=>console.log("Error en crear prodcuto"+err));
   }
+
 
 }

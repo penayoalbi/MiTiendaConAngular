@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Productos } from 'src/app/entidades/productos';
 import { ApiService } from 'src/app/servicios/api/api.service';
 import { ProductoServiceService } from 'src/app/servicios/api/producto-service.service';
@@ -12,7 +12,9 @@ import { ResaltarDirective } from 'src/app/directivas/resaltar.directive';
 })
 export class ProductosComponent implements OnInit {
 
- @Output()data: any; 
+ @Output()
+ emitirProducto: EventEmitter<any> = new EventEmitter();
+
   nuevo:boolean;
   prod: any = [];
   color!:'';
@@ -23,24 +25,31 @@ export class ProductosComponent implements OnInit {
    }
    
   ngOnInit(){
-    this.api.traerProductos().subscribe(
-      resp =>{
-         // console.log(resp),
-        this.prod = resp;
-      },
-      err => console.error(err));
+    this.getListarProductos();
+    }
+
+    getListarProductos(){
+      this.api.traerProductos().subscribe(
+        resp =>{
+           // console.log(resp),
+          this.prod = resp;
+        },
+        err => console.error('error en listar')
+      );
     }
 
     eliminar(id:number){
       console.log(id);
+      this.getListarProductos();
       this.api.borrarProducto(id).subscribe(
-        resp=> {console.log('se elimino correctamente')},
-        err => {console.log('error al eliminar')}
-      );
+        resp => {
+          console.log('se elimino correctamente');
+      },
+       err => console.log('error al eliminar'));
     }
 
     agregarFavorito(){
      // console.log(this.prod);
-      this.serviProducto.disparadorFavorito.emit({data: this.prod});
+    // this.emitirProducto.emit(); 
     }
 }

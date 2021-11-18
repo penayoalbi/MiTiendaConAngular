@@ -18,7 +18,7 @@ const routes: Routes = [
  {path: 'editar', component: EditarComponent,canActivate:[GuardGuard]},
  {path: 'productos', component: ProductosComponent},
  { path: 'addproducto', component: NuevoProductoComponent, canActivate:[GuardGuard]},
- {path: 'carrito', component: CarritoComponent},
+ {path: 'favorito', component: CarritoComponent},
  {path: '**', component: NoEncontradoComponent},
  
 ];

@@ -3,12 +3,18 @@
     <div class="col-md-7" >
         <app-productos></app-productos>  
     </div>
-    <div class="col-md-5"  id='add'>
-      <app-nuevo-producto ></app-nuevo-producto>
-    </div>
+    <ng-container>
+      <div *ngIf="isAdmin" class="col-md-5"  id='add'>
+        <app-nuevo-producto ></app-nuevo-producto>
+      </div>
+      <div *ngIf=!isAdmin>
+        <app-carrito></app-carrito>
+      </div>
+    </ng-container>
+    
   </div>
 </div>
-<div>
+<div #carrito>
   <app-carrito></app-carrito>
 </div>
 

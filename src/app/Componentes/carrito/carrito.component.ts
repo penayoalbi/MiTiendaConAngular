@@ -9,7 +9,8 @@ import { ProductoServiceService } from 'src/app/servicios/api/producto-service.s
   styleUrls: ['./carrito.component.css']
 })
 export class CarritoComponent implements OnInit {
-  @Input()datosEntrante!: Productos;
+  
+  @Input()datosEntrante!: any;
 
   constructor( private serviProducto: ProductoServiceService) { }
 
@@ -20,6 +21,10 @@ export class CarritoComponent implements OnInit {
       this.listaFavorito.push(data)}); 
       //console.log(this.listaFavorito); 
   }
-   
+
+  addFavorito():void{
+    console.log('data'+this.datosEntrante);
+
+  }
 
 }

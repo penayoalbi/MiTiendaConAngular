@@ -29,10 +29,10 @@
                 </form>   
             </div>
     </div>
-    <!--Lista previsualizar-->
+    <!--previsualizar-->
     <div class="col-md-5">
         <div class="card card-body text-center">
-            <img [src]="producto.imagen =='' ? '/assets/no-image.png' : producto.imagen" class="card-img-top">
+            <img [src]="producto.imagen =='' ? 'assets/no-image.png' : producto.imagen" class="card-img-top">
             <p>{{producto.nombre}}</p>
             <p>{{producto.descripcion}}</p>
             <p>{{producto.categoria}}</p>
